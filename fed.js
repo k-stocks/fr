@@ -1,6 +1,6 @@
 (() => {
   "use strict";
-  const API_BASE = "https://fr.mcraft-tiger-574.workers.dev";
+  const API_BASE = "https://fr.hundprint.workers.dev";
   const $ = id => document.getElementById(id);
   const state = { tab: "board", data: null, selected: null };
 
