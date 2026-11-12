@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f3f5f9">
+<title>연방준비제도 모니터 | FEDERAL RESERVE MONITOR</title>
+<link rel="stylesheet" href="fed.css?v=8">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <a class="brand" href="./index.html"><span class="brand-mark">F</span><span><b>연방준비제도 모니터</b><small>FEDERAL RESERVE MONITOR</small></span></a>
+    <div class="top-actions"><span id="updatedAt" class="updated">공식 명단 확인 중</span><button id="themeBtn" class="icon-btn" type="button" aria-label="명암 전환">◐</button><button id="refreshBtn" class="icon-btn" type="button" aria-label="새로고침">↻</button></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div><span class="eyebrow">US MONETARY POLICY · PEOPLE TRACKER</span><h1>연방준비제도를 움직이는<br><em>핵심 인물</em>을 추적합니다</h1><p>현직 연방준비제도 이사회와 FOMC 구성원을 공식 명단으로 자동 갱신하고, 인물별 최신 뉴스 검색 결과를 목록으로 제공합니다.</p></div>
+      <div class="hero-date"><span>OFFICIAL ROSTER</span><b id="rosterYear">—</b><small>Federal Reserve</small></div>
+    </section>
+
+    <section class="summary-grid">
+      <article class="summary-card"><span>BOARD OF GOVERNORS</span><b id="boardCount">—</b><small>연준 이사회</small></article>
+      <article class="summary-card"><span>FOMC VOTING MEMBERS</span><b id="fomcCount">—</b><small>투표권 보유 위원</small></article>
+      <article class="summary-card"><span>ALTERNATE MEMBERS</span><b id="alternateCount">—</b><small>대체 위원</small></article>
+    </section>
+
+    <nav class="tabs" aria-label="인물 구분">
+      <button class="tab active" data-tab="board">연준 이사 7명 <small>FED GOVERNORS</small></button>
+      <button class="tab" data-tab="fomc">FOMC Members <small>투표권 보유 위원</small></button>
+    </nav>
+
+    <section class="intro card">
+      <div><span class="eyebrow">CURRENT MEMBERSHIP</span><h2 id="sectionTitle">Federal Reserve Board of Governors</h2><p id="sectionDescription">연준 이사회 현직 구성원입니다. 인물 카드를 선택하면 해당 인물의 최신 뉴스 검색 결과를 확인할 수 있습니다.</p></div>
+      <div class="intro-links"><a href="https://www.federalreserve.gov/aboutthefed/bios/board/" target="_blank" rel="noopener">연준 이사 공식 명단 ↗</a><a href="https://www.federalreserve.gov/monetarypolicy/FOMC.htm" target="_blank" rel="noopener">FOMC 공식 명단 ↗</a></div>
+    </section>
+
+    <div class="content-layout">
+      <section class="people-area">
+        <div class="section-head"><div><span class="eyebrow">PEOPLE</span><h2 id="peopleHeading">현직 연준 이사</h2></div><input id="peopleSearch" type="search" placeholder="이름 또는 직책 검색" aria-label="인물 검색"></div>
+        <div id="peopleList" class="people-grid"><div class="loading">연준 공식 명단을 불러오고 있습니다.</div></div>
+        <section id="alternatesSection" class="alternates card" hidden><div class="section-head"><div><span class="eyebrow">NON-VOTING / ALTERNATES</span><h3>대체 위원</h3></div><span class="muted">FOMC Alternate Members</span></div><div id="alternatesList" class="alternate-list"></div></section>
+      </section>
+
+      <aside class="news-area card">
+        <div class="news-head"><div><span class="eyebrow">LATEST COVERAGE</span><h2 id="newsPerson">인물을 선택하세요</h2><p id="newsQuery">선택한 인물의 최신 뉴스</p></div><button id="searchAgain" class="text-btn" type="button" disabled>다시 검색 ↻</button></div>
+        <div id="newsStatus" class="news-status">왼쪽에서 인물을 선택하면 최신 뉴스가 표시됩니다.</div>
+        <div id="newsList" class="news-list"></div><button id="loadMoreNews" class="text-btn load-more-news" type="button" hidden>기사 5개 더 보기 ↓</button>
+        <div class="news-foot"><span id="newsProvider">이름 기준 최신 뉴스 검색 결과</span><a id="googleSearch" href="#" target="_blank" rel="noopener" hidden>Google News에서 더 보기 ↗</a></div>
+      </aside>
+    </div>
+
+    <footer><span>자료 출처: Board of Governors · Federal Open Market Committee</span><span>명단 자동 확인 · 뉴스 목록 및 원문 링크 제공</span></footer>
+  </main>
+</div>
+<div id="toast" class="toast" role="status"></div>
+<script src="fed.js?v=8"></script>
+</body>
+</html>
